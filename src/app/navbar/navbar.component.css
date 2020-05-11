@@ -1,0 +1,36 @@
+.container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: auto auto auto ;
+    grid-gap: 10px 0px;
+    text-align: center;
+    color: antiquewhite;
+    font-family: 'Trebuchet MS', 'Lucida Sans Unicode', 'Lucida Grande', 'Lucida Sans', Arial, sans-serif;
+    
+}
+
+.d1 {
+    background-color: rgb(50,50,50);
+    width: 25vw;
+    justify-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.d1:hover {
+    transform: scale(1.07);
+}
+
+.d2 {
+    background-color: rgb(100,100,100);
+    width: 25vw;
+    justify-self: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.d2:hover {
+    transform: scale(1.07);
+}

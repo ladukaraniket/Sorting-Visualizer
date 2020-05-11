@@ -119,6 +119,10 @@
           }
         }
       }
-    }},
-  "defaultProject": "Sorting-Simulator"
+    }
+  },
+  "defaultProject": "Sorting-Simulator",
+  "cli": {
+    "analytics": false
+  }
 }
