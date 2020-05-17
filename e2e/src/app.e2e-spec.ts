@@ -10,7 +10,7 @@ describe('workspace-project App', () => {
 
   it('should display welcome message', () => {
     page.navigateTo();
-    expect(page.getTitleText()).toEqual('Sorting-Simulator app is running!');
+    expect(page.getTitleText()).toEqual('Sorting-Visualizer app is running!');
   });
 
   afterEach(async () => {

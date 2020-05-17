@@ -1,20 +1,20 @@
 import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { NavbarComponent } from './navbar.component';
+import { SortingVisualizerComponent } from './sorting-visualizer.component';
 
-describe('NavbarComponent', () => {
-  let component: NavbarComponent;
-  let fixture: ComponentFixture<NavbarComponent>;
+describe('SortingVisualizerComponent', () => {
+  let component: SortingVisualizerComponent;
+  let fixture: ComponentFixture<SortingVisualizerComponent>;
 
   beforeEach(async(() => {
     TestBed.configureTestingModule({
-      declarations: [ NavbarComponent ]
+      declarations: [ SortingVisualizerComponent ]
     })
     .compileComponents();
   }));
 
   beforeEach(() => {
-    fixture = TestBed.createComponent(NavbarComponent);
+    fixture = TestBed.createComponent(SortingVisualizerComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

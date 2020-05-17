@@ -1,0 +1,25 @@
+<body >
+    <section class="slide-in-fwd-center">
+        <header>
+            Sorting Visualizer
+        </header>
+
+
+        <div class="navcontainer">
+            <div class="algos">
+                <div *ngFor="let alg of algolist; let index=index"
+                    [ngClass]="{'d1': 0 === index % 2,'d2': 1 === index % 2} "> {{alg}}</div>
+            </div>
+            <button (click)="randomArray()" class="button">Generate Random array!</button>
+        </div>
+
+        <div class="bar-container">
+            <div *ngFor="let num of numberList; let index=index" class="bar" id="{{index}}"
+                [ngStyle]="{'height.px': num }">
+            </div>
+        </div>
+
+        <div class="dock"></div>
+    </section>
+
+</body>

@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "Sorting-Simulator": {
+    "Sorting-Visualizer": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:browser",
           "options": {
-            "outputPath": "dist/Sorting-Simulator",
+            "outputPath": "dist/Sorting-Visualizer",
             "index": "src/index.html",
             "main": "src/main.ts",
             "polyfills": "src/polyfills.ts",
@@ -62,18 +62,18 @@
         "serve": {
           "builder": "@angular-devkit/build-angular:dev-server",
           "options": {
-            "browserTarget": "Sorting-Simulator:build"
+            "browserTarget": "Sorting-Visualizer:build"
           },
           "configurations": {
             "production": {
-              "browserTarget": "Sorting-Simulator:build:production"
+              "browserTarget": "Sorting-Visualizer:build:production"
             }
           }
         },
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "browserTarget": "Sorting-Simulator:build"
+            "browserTarget": "Sorting-Visualizer:build"
           }
         },
         "test": {
@@ -110,18 +110,18 @@
           "builder": "@angular-devkit/build-angular:protractor",
           "options": {
             "protractorConfig": "e2e/protractor.conf.js",
-            "devServerTarget": "Sorting-Simulator:serve"
+            "devServerTarget": "Sorting-Visualizer:serve"
           },
           "configurations": {
             "production": {
-              "devServerTarget": "Sorting-Simulator:serve:production"
+              "devServerTarget": "Sorting-Visualizer:serve:production"
             }
           }
         }
       }
     }
   },
-  "defaultProject": "Sorting-Simulator",
+  "defaultProject": "Sorting-Visualizer",
   "cli": {
     "analytics": false
   }

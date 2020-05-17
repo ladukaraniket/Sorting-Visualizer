@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron&display=swap');
+@font-face {
+    font-family: 'tex_gyre_adventorbold';
+    src: url('texgyreadventor-bold-webfont.woff') format('woff');         
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+.slide-in-fwd-center {
+	-webkit-animation: slide-in-fwd-center 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+	        animation: slide-in-fwd-center 1s cubic-bezier(0.250, 0.460, 0.450, 0.940) both;
+}
+
+ @-webkit-keyframes slide-in-fwd-center {
+  0% {
+    -webkit-transform: translateZ(-1400px);
+            transform: translateZ(-1400px);
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+    
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-in-fwd-center {
+  0% {
+    -webkit-transform: translateZ(-1400px);
+            transform: translateZ(-1400px);
+    -webkit-transform: scale(0.9);
+            transform: scale(0.9);
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: translateZ(0);
+            transform: translateZ(0);
+    opacity: 1;
+  }
+}
+
+
+
+.swing-in-top-fwd {
+	-webkit-animation: swing-in-top-fwd 1.5s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
+	        animation: swing-in-top-fwd 1.5s cubic-bezier(0.175, 0.885, 0.320, 1.275) both;
+}
+
+
+ @-webkit-keyframes swing-in-top-fwd {
+  0% {
+    -webkit-transform: rotateX(-100deg);
+            transform: rotateX(-100deg);
+    -webkit-transform-origin: top;
+            transform-origin: top;
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+    -webkit-transform-origin: top;
+            transform-origin: top;
+    opacity: 1;
+  }
+}
+@keyframes swing-in-top-fwd {
+  0% {
+    -webkit-transform: rotateX(-100deg);
+            transform: rotateX(-100deg);
+    -webkit-transform-origin: top;
+            transform-origin: top;
+    opacity: 0;
+  }
+  100% {
+    -webkit-transform: rotateX(0deg);
+            transform: rotateX(0deg);
+    -webkit-transform-origin: top;
+            transform-origin: top;
+    opacity: 1;
+  }
+}
+
+
+header {
+    padding: 0px 0px 20px 0px;
+    text-align: center;
+    font-size: 60px;
+    line-height: 1;
+    font-family: 'tex_gyre_adventorbold', sans-serif;
+    justify-content: center;
+    z-index: 1;
+    color: white;
+    text-shadow: 3px 2px rgb(122, 189, 166);    
+    user-select: none;
+}
+
+header::before{
+    content: '';
+    background-color: darkcyan;
+    border-radius: 0.3em;
+    display: block;
+    position: absolute;
+    z-index: -1;
+    height: 9%;
+    width: 100%;
+}
+
+
+
+.button {
+    justify-self: center;
+    width: auto;
+    font-family: 'tex_gyre_adventorbold', sans-serif;
+    background-color: rgb(12, 112, 112);
+    color: white;
+    padding: .5em;
+    border: 0;
+    border-radius: 0.7em;
+
+}
+
+.button:focus {
+  outline: none;
+}
+  
+.navcontainer {
+    display: grid;
+    grid-template-rows: auto auto;
+    width: 100%;
+    text-align: center;
+    color: white;
+    text-shadow: 2px 2px rgb(5, 63, 63);
+    font-family: 'tex_gyre_adventorbold', sans-serif;
+    font-size: medium;    
+}
+
+.algos {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(6,auto);
+    margin-top: 10px;
+    margin-bottom: 10px;
+    line-height: 100%;    
+    user-select: none;
+}
+
+.d1 {
+    background-color: rgb(1, 102, 102);
+    width: 80%;
+    justify-self: center;
+    padding: 10px;
+    border-radius: 1em;
+}
+
+.d1:hover {
+    transform: scale(1.03);
+}
+
+.d2 {
+    background-color: rgb(47, 102, 112);
+    width: 80%;
+    justify-self: center;
+    padding: 10px;
+    border-radius: 1em;
+}
+
+.d2:hover {
+    transform: scale(1.03);
+}
+
+.bar-container{
+  margin-top: 20px;
+  width: 100%;
+  height: 39em;
+  text-align: center;  
+  background-color: rgb(29, 172, 172);
+  padding-top: 1em;
+  border-radius: 1em;  
+}
+
+.bar{
+  position: relative;
+  width: 4px;
+  margin: 0px 2px;
+  border-top-left-radius: 1em;
+  display: inline-block;
+  background-color: aquamarine;
+  bottom: 0em;
+  box-shadow: 1px 1px rgb(162, 177, 172);
+}
+
+.dock{
+  left: 30px;
+  transform: translateY(-35px);
+  width: 100%;
+  height: 35px;
+  border-radius: 1em;
+  background-color: rgb(29, 172, 172);;
+}
