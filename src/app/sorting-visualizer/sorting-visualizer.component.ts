@@ -1,5 +1,11 @@
+import { RadixSort } from './radix-sort';
+import { QuickSort } from './quick-sort';
+import { MergeSort } from './merge-sort';
+import { BubbleSort } from './bubble-sort';
+import { SelectionSort } from './selection-sort';
+import { HeapSort } from './heap-sort';
 import { Component, OnInit } from '@angular/core';
-import {SelectionSort} from './selection-sort';
+
 
 @Component({
   selector: 'app-sorting-visualizer',
@@ -15,7 +21,7 @@ export class SortingVisualizerComponent implements OnInit {
 
   randomArray() {
     this.numberList = [];
-    for (let i = 0; i < 200; i++) {
+    for (let i = 0; i < 220; i++) {
       this.numberList.push(this.randomIntFromInterval(30, 600));
     }
 
@@ -29,10 +35,9 @@ export class SortingVisualizerComponent implements OnInit {
   }
 
   startSort() {
-    let animations=[];
     switch (this.selectedAlgo) {
-      case 'Selection': animations = new SelectionSort().selectionSort([1,2,3]);
-                        this.animate(animations);
+      case 'Selection': this.animations = new SelectionSort().selectionSort([1,2,3]);
+                        this.animate(this.animations);
         break;
       case 'Bubble':
         break;
