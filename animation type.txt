@@ -1,0 +1,14 @@
+
+..................................
+    event        |   indices
+'''''''''''''''''|''''''''''''''''
+unsorted         |  (id_1)
+compare          |  (id_1 , id_2)
+swap             |  (id_1 , id_2)
+sorted order     |  (id_1)
+''''''''''''''''''''''''''''''''''
+
+
+animations =[animation_1,animation_2...............,animation_n]
+
+animation_x = [event,indices]   where   (x=1,2,3,4..........,n)
