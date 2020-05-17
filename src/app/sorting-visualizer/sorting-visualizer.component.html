@@ -7,10 +7,11 @@
 
         <div class="navcontainer">
             <div class="algos">
-                <div *ngFor="let alg of algolist; let index=index"
-                    [ngClass]="{'d1': 0 === index % 2,'d2': 1 === index % 2} "> {{alg}}</div>
+                <button *ngFor="let alg of algolist; let index=index"
+                    [ngClass]="{'d1': 0 === index % 2,'d2': 1 === index % 2} " (click)="setAlgo(alg)" > {{alg}}</button>
             </div>
             <button (click)="randomArray()" class="button">Generate Random array!</button>
+            <button class="button" (click)="startSort()">Start</button>
         </div>
 
         <div class="bar-container">

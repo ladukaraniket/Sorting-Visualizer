@@ -8,7 +8,7 @@ swap             |  (id_1 , id_2)
 sorted order     |  (id_1)
 ''''''''''''''''''''''''''''''''''
 
+animation_x = [event,indices]   where   (x=1,2,3,4..........,n)
 
 animations =[animation_1,animation_2...............,animation_n]
 
-animation_x = [event,indices]   where   (x=1,2,3,4..........,n)
