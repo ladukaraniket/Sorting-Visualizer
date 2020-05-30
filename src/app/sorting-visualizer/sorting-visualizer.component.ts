@@ -1,10 +1,7 @@
-import { RadixSort } from './radix-sort';
-import { QuickSort } from './quick-sort';
-import { MergeSort } from './merge-sort';
-import { BubbleSort } from './bubble-sort';
-import { SelectionSort } from './selection-sort';
-import { HeapSort } from './heap-sort';
+import { AppRoutingModule } from './../app-routing.module';
 import { Component, OnInit } from '@angular/core';
+import { getMergeSortAnimations } from './merge-sort';
+import { getSelectionSortAnimations } from './selection-sort';
 
 
 @Component({
@@ -15,18 +12,22 @@ import { Component, OnInit } from '@angular/core';
 export class SortingVisualizerComponent implements OnInit {
 
   algolist = ["Selection Sort", "Bubble Sort", "Merge Sort", "Quick Sort", "Radix Sort", "Heap Sort"];
-  numberList = []
-  animations = []
-  selectedAlgo = '';
+
+  numberList = [] // main array
+  animations = [] // animations 
+  selectedAlgo = ''; //current selected Algorithm
+
+  PRIMARY_COLOR = 'aquamarine';
+  SECONDARY_COLOR = 'black';
+  TERTIARY_COLOR = 'green';
+
+  ANIMATION_DELAY_MS = 30;
 
   randomArray() {
     this.numberList = [];
-    for (let i = 0; i < 220; i++) {
-      this.numberList.push(this.randomIntFromInterval(30, 600));
+    for (let i = 0; i < 100; i++) {
+      this.numberList.push(this.randomIntFromInterval(60, 600));
     }
-
-    this.animations = [['STD', [1]], ['CMP', [3, 45]], ['SWP', [3, 45]], ['UNS', [90]]];
-    this.animate(this.animations);
   }
 
   setAlgo(algo: string) {
@@ -36,12 +37,15 @@ export class SortingVisualizerComponent implements OnInit {
 
   startSort() {
     switch (this.selectedAlgo) {
-      case 'Selection': this.animations = new SelectionSort().selectionSort([1,2,3]);
-                        this.animate(this.animations);
+      case 'Selection':
+        this.animations = getSelectionSortAnimations(this.numberList.slice());
+        this.animate();
         break;
       case 'Bubble':
         break;
       case 'Merge':
+        this.animations = getMergeSortAnimations(this.numberList.slice());
+        this.animate();
         break;
       case 'Quick':
         break;
@@ -52,29 +56,47 @@ export class SortingVisualizerComponent implements OnInit {
     }
   }
 
-  animate(animations: any[]) {
+  animate() {
+    for (let i = 0; i < this.animations.length; i++) {
 
-    let anim = [];
+      const bars = document.getElementsByClassName('bar') as HTMLCollectionOf<HTMLDivElement>;
+      const [op, [num1, num2]] = this.animations[i];
 
-    while (animations.length > 0) {
-      anim = animations.shift();
 
-      switch (anim[0]) {
-        //Unsorted
-        case 'UNS': console.log("Unsorted");
+      switch (op) {
+        case 'CMP':
+          setTimeout(() => {
+            bars[num1].style.backgroundColor = this.SECONDARY_COLOR;
+            bars[num2].style.backgroundColor = this.SECONDARY_COLOR;
+          }, i * this.ANIMATION_DELAY_MS);
+          ;
           break;
-        //Compare
-        case 'CMP': console.log("Compare");
+
+        case 'REV':
+          setTimeout(() => {
+            bars[num1].style.backgroundColor = this.PRIMARY_COLOR;
+            bars[num2].style.backgroundColor = this.PRIMARY_COLOR;
+          }, i * this.ANIMATION_DELAY_MS);
+          ;
           break;
-        //Swap
-        case 'SWP': console.log("Swap");
+
+        case 'REP':
+          setTimeout(() => {
+            this.numberList[num1] = num2;
+            bars[num1].style.backgroundColor = this.PRIMARY_COLOR;
+          }, i * this.ANIMATION_DELAY_MS);
           break;
-        //Sorted
-        case 'STD': console.log("Sorted");
-          break;
+
+        case 'MIN':
+          setTimeout(() => {
+            bars[num1].style.backgroundColor = this.TERTIARY_COLOR;
+
+          }, i * this.ANIMATION_DELAY_MS);
       }
     }
   }
+
+
   constructor() { }
 
   ngOnInit(): void {

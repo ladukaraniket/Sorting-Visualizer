@@ -1,4 +1,4 @@
-<body >
+<body>
     <section class="slide-in-fwd-center">
         <header>
             Sorting Visualizer
@@ -8,7 +8,7 @@
         <div class="navcontainer">
             <div class="algos">
                 <button *ngFor="let alg of algolist; let index=index"
-                    [ngClass]="{'d1': 0 === index % 2,'d2': 1 === index % 2} " (click)="setAlgo(alg)" > {{alg}}</button>
+                    [ngClass]="{'d1': 0 === index % 2,'d2': 1 === index % 2} " (click)="setAlgo(alg)"> {{alg}}</button>
             </div>
             <button (click)="randomArray()" class="button">Generate Random array!</button>
             <button class="button" (click)="startSort()">Start</button>
@@ -16,9 +16,10 @@
 
         <div class="bar-container">
             <div *ngFor="let num of numberList; let index=index" class="bar" id="{{index}}"
-                [ngStyle]="{'height.px': num }">
+                [ngStyle]="{'height.px': numberList[index], 'grid-column-start' : index+8}">
             </div>
         </div>
+
 
         <div class="dock"></div>
     </section>

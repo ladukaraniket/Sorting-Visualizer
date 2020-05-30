@@ -194,32 +194,37 @@ header::before{
   outline: none;
 }
 
+
 .bar-container{
+  width: 100%;  
+  display: grid;
+  grid-template-columns: repeat(114,auto);
+  align-items: flex-end;
   margin-top: 12px;
-  width: 100%;
-  height: 39em;
-  text-align: center;  
+  height: 42.4em;  
   background-color: rgb(29, 172, 172);
   padding-top: 1em;
   border-radius: 1em;  
+  bottom: 0em;
 }
 
 .bar{
-  position: relative;
-  width: 4px;
+  transform: translateY(-10px);
+  width: 8px;
   margin: 0px 2px;
-  border-top-left-radius: 1em;
-  display: inline-block;
+  border-top-left-radius: 0.7em;
   background-color: aquamarine;
-  bottom: 0em;
   box-shadow: 1px 1px rgb(162, 177, 172);
 }
 
 .dock{
   left: 30px;
-  transform: translateY(-35px);
+  bottom: 0em;
+  transform: translateY(-43px);
   width: 100%;
-  height: 35px;
+  height: 40px;
   border-radius: 1em;
-  background-color: rgb(29, 172, 172);;
+  background-color: rgb(29, 172, 172);
+ 
 }
+
