@@ -2,6 +2,7 @@ import { AppRoutingModule } from './../app-routing.module';
 import { Component, OnInit } from '@angular/core';
 import { getMergeSortAnimations } from './merge-sort';
 import { getSelectionSortAnimations } from './selection-sort';
+import { getHeapSortAnimations } from './heap-sort';
 
 
 @Component({
@@ -39,21 +40,26 @@ export class SortingVisualizerComponent implements OnInit {
     switch (this.selectedAlgo) {
       case 'Selection':
         this.animations = getSelectionSortAnimations(this.numberList.slice());
-        this.animate();
         break;
+
       case 'Bubble':
         break;
+
       case 'Merge':
         this.animations = getMergeSortAnimations(this.numberList.slice());
-        this.animate();
         break;
+
       case 'Quick':
         break;
+
       case 'Radix':
         break;
+
       case 'Heap':
+        this.animations = getHeapSortAnimations(this.numberList.slice());
         break;
     }
+    this.animate();
   }
 
   animate() {
