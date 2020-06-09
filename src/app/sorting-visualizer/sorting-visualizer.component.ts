@@ -4,6 +4,8 @@ import { getMergeSortAnimations } from './merge-sort';
 import { getSelectionSortAnimations } from './selection-sort';
 import { getQuickSortAnimations } from './quick-sort';
 import { getBubbleSortAnimations } from './bubble-sort';
+import { getHeapSortAnimations } from './heap-sort';
+
 
 @Component({
   selector: 'app-sorting-visualizer',
@@ -41,25 +43,30 @@ export class SortingVisualizerComponent implements OnInit {
     switch (this.selectedAlgo) {
       case 'Selection':
         this.animations = getSelectionSortAnimations(this.numberList.slice());
-        this.animate();
         break;
+
       case 'Bubble':
         this.animations = getBubbleSortAnimations(this.numberList.slice());
         this.animate();
         break;
+
       case 'Merge':
         this.animations = getMergeSortAnimations(this.numberList.slice());
-        this.animate();
         break;
+
       case 'Quick':
         this.animations = getQuickSortAnimations(this.numberList.slice());
         this.animate();
         break;
+
       case 'Radix':
         break;
+
       case 'Heap':
+        this.animations = getHeapSortAnimations(this.numberList.slice());
         break;
     }
+    this.animate();
   }
 
   animate() {
