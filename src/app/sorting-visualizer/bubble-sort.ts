@@ -1,7 +1,23 @@
-export class BubbleSort {
+export function getBubbleSortAnimations(array) {
+    const animations = [];
+    if (array.length <= 1) return array;
 
-    bubbleSort(arr) {
-        console.log(arr);
-        return [['CMP', [1, 3]]];
+    for (let i = 0; i < array.length; i++) {
+        for (let j = 0; j < array.length - i; j++) {
+            //Comparing jth element with element at j+1. add animations
+            animations.push(['CMP', [j, j+1]]);
+            animations.push(['REV', [j+1, j+1]]);
+            animations.push(['REV', [j, j]]);
+
+            if (array[j+1] < array[j]) {
+                const temp = array[j];
+                animations.push(['REP', [j, array[j+1]]]);
+                animations.push(['REP', [j+1, temp]]);
+                array[j] = array[j+1];
+                array[j+1] = temp;
+
+            }
+        }        
     }
-    }
+    return animations;
+}

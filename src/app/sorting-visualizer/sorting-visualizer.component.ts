@@ -2,7 +2,8 @@ import { AppRoutingModule } from './../app-routing.module';
 import { Component, OnInit } from '@angular/core';
 import { getMergeSortAnimations } from './merge-sort';
 import { getSelectionSortAnimations } from './selection-sort';
-
+import { getQuickSortAnimations } from './quick-sort';
+import { getBubbleSortAnimations } from './bubble-sort';
 
 @Component({
   selector: 'app-sorting-visualizer',
@@ -20,6 +21,7 @@ export class SortingVisualizerComponent implements OnInit {
   PRIMARY_COLOR = 'aquamarine';
   SECONDARY_COLOR = 'black';
   TERTIARY_COLOR = 'green';
+  QUATERNARY_COLOR = 'pink';
 
   ANIMATION_DELAY_MS = 30;
 
@@ -42,12 +44,16 @@ export class SortingVisualizerComponent implements OnInit {
         this.animate();
         break;
       case 'Bubble':
+        this.animations = getBubbleSortAnimations(this.numberList.slice());
+        this.animate();
         break;
       case 'Merge':
         this.animations = getMergeSortAnimations(this.numberList.slice());
         this.animate();
         break;
       case 'Quick':
+        this.animations = getQuickSortAnimations(this.numberList.slice());
+        this.animate();
         break;
       case 'Radix':
         break;
@@ -90,7 +96,11 @@ export class SortingVisualizerComponent implements OnInit {
         case 'MIN':
           setTimeout(() => {
             bars[num1].style.backgroundColor = this.TERTIARY_COLOR;
+          }, i * this.ANIMATION_DELAY_MS);
 
+        case 'PVT':
+          setTimeout(() => {
+            bars[num1].style.backgroundColor = this.QUATERNARY_COLOR;
           }, i * this.ANIMATION_DELAY_MS);
       }
     }
