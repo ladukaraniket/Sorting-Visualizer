@@ -5,7 +5,7 @@ import { getSelectionSortAnimations } from './selection-sort';
 import { getQuickSortAnimations } from './quick-sort';
 import { getBubbleSortAnimations } from './bubble-sort';
 import { getHeapSortAnimations } from './heap-sort';
-
+import { getShellSortAnimations } from './shell-sort';
 
 @Component({
   selector: 'app-sorting-visualizer',
@@ -14,7 +14,7 @@ import { getHeapSortAnimations } from './heap-sort';
 })
 export class SortingVisualizerComponent implements OnInit {
 
-  algolist = ["Selection Sort", "Bubble Sort", "Merge Sort", "Quick Sort", "Radix Sort", "Heap Sort"];
+  algolist = ["Selection Sort", "Bubble Sort", "Merge Sort", "Quick Sort", "Shell Sort", "Heap Sort"];
 
   numberList = [] // main array
   animations = [] // animations 
@@ -59,7 +59,9 @@ export class SortingVisualizerComponent implements OnInit {
         this.animate();
         break;
 
-      case 'Radix':
+      case 'Shell':
+        this.animations = getShellSortAnimations(this.numberList.slice());
+        this.animate();
         break;
 
       case 'Heap':
