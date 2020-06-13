@@ -8,6 +8,7 @@ export function getBubbleSortAnimations(array) {
             animations.push(['CMP', [j, j+1]]);
             animations.push(['REV', [j, j+1]]);
            // animations.push(['REV', [j, j]]);
+            //animations.push(['REV', [j+1, j+1]]); 
 
             if (array[j+1] < array[j]) {
                 const temp = array[j];
