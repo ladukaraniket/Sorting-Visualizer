@@ -19,11 +19,17 @@ export class SortingVisualizerComponent implements OnInit {
   numberList = [] // main array
   animations = [] // animations 
   selectedAlgo = ''; //current selected Algorithm
+  selectedButton: HTMLButtonElement ;
 
-  PRIMARY_COLOR = 'aquamarine';
-  SECONDARY_COLOR = 'black';
-  TERTIARY_COLOR = 'green';
+  //PRIMARY_COLOR = '#8b8473';
+  PRIMARY_COLOR = 'black';
+  SECONDARY_COLOR = 'white';
+  //SECONDARY_COLOR = '#fff1cf';
+  //SECONDARY_COLOR = 'aquamarine';
+  
+  TERTIARY_COLOR = '#ffd369';
   QUATERNARY_COLOR = 'pink';
+  SORTED_COLOR = '#fff1cf';
 
   ANIMATION_DELAY_MS = 30;
 
@@ -36,7 +42,14 @@ export class SortingVisualizerComponent implements OnInit {
 
   setAlgo(algo: string) {
     this.selectedAlgo = algo.split(' ')[0];
-    console.log(this.selectedAlgo);
+        
+    try{
+    this.selectedButton.style.boxShadow = "";
+    }
+    catch{    }
+    
+    this.selectedButton = document.getElementsByName(algo)[0] as HTMLButtonElement;
+    this.selectedButton.style.boxShadow = "2px 2px 4px #667579";
   }
 
   startSort() {
@@ -47,7 +60,7 @@ export class SortingVisualizerComponent implements OnInit {
 
       case 'Bubble':
         this.animations = getBubbleSortAnimations(this.numberList.slice());
-        this.animate();
+        
         break;
 
       case 'Merge':
@@ -56,7 +69,7 @@ export class SortingVisualizerComponent implements OnInit {
 
       case 'Quick':
         this.animations = getQuickSortAnimations(this.numberList.slice());
-        this.animate();
+        
         break;
 
       case 'Radix':
@@ -104,11 +117,19 @@ export class SortingVisualizerComponent implements OnInit {
           setTimeout(() => {
             bars[num1].style.backgroundColor = this.TERTIARY_COLOR;
           }, i * this.ANIMATION_DELAY_MS);
+          break;
 
         case 'PVT':
           setTimeout(() => {
             bars[num1].style.backgroundColor = this.QUATERNARY_COLOR;
           }, i * this.ANIMATION_DELAY_MS);
+          break;
+
+        case 'FIN':
+          setTimeout(() => {
+            bars[num1].style.backgroundColor = this.SORTED_COLOR;
+          }, i * this.ANIMATION_DELAY_MS);
+          break;
       }
     }
   }

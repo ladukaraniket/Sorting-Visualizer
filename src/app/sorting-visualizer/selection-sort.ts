@@ -25,6 +25,7 @@ export function getSelectionSortAnimations(array) {
         animations.push(['REV', [minidx, minidx]]);
         animations.push(['REP', [minidx, array[i]]]);
         animations.push(['REP', [i, temp]]);
+        animations.push(['FIN',[i,i]]);
         array[minidx] = array[i];
         array[i] = temp;
 

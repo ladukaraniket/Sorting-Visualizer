@@ -55,16 +55,18 @@ export function getHeapSortAnimations(array) {
         temp1 = array[0];
         animations.push(['REP', [0, array[i]]]);
         animations.push(['REP', [i, temp1]]);
+        animations.push(['FIN', [i, i]]);
+
 
         array[0] = array[i];
         array[i] = temp1;
 
         while (true) {
-            if (2 * root + 1 > i - 1) {
+            if ((2 * root + 1) > i - 1) {
                 break;
             }
 
-            if (2 * root + 2 > i - 1) {
+            if ((2 * root + 2) > i - 1) {
                 child = 2 * root + 1;
             }
             else {
@@ -72,6 +74,7 @@ export function getHeapSortAnimations(array) {
             }
 
             // Comparing root with child
+
             animations.push(['CMP', [root, child]]);
             animations.push(['REV', [root, child]]);
 
@@ -88,8 +91,8 @@ export function getHeapSortAnimations(array) {
             else {
                 break;
             }
-        }
 
+        }
 
     }
 

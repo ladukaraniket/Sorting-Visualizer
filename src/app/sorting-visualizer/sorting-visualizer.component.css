@@ -104,8 +104,8 @@ header {
 
 header::before{
     content: '';
-    background-color: darkcyan;
-    border-radius: 0.3em;
+    background-color: #015668;
+    border-radius: 0.1em;
     display: block;
     position: absolute;
     z-index: -1;
@@ -120,16 +120,17 @@ header::before{
     margin-left: 50%;
     width: 10vw;
     font-family: 'tex_gyre_adventorbold', sans-serif;
-    background-color: rgb(12, 112, 112);
-    color: white;
+    background-color: #ffd369;
+    color: #263f44;
     border: 0;
-    border-radius: 0.7em;
+    border-radius: 0.4em;
     transform: translateX(-50%);
     user-select: none;
 }
 
 .button:focus {
   outline: none;
+  
 }
   
 .navcontainer {
@@ -155,11 +156,11 @@ header::before{
 
 .d1 {
     font-family: 'tex_gyre_adventorbold', sans-serif;
-    color: white;
-    background-color: rgb(1, 102, 102);
+    color: #263f44;
+    background-color: #ffd87e;
     width: 80%;
     justify-self: center;
-    border-radius: 1em;
+    border-radius: 0.4em;
     padding: .5em;
     border: 0;
     user-select: none;
@@ -168,6 +169,7 @@ header::before{
 
 .d1:hover {
     transform: scale(1.03);
+    box-shadow: 2px 2px 4px #667579;
 }
 
 .d1:focus {
@@ -176,11 +178,11 @@ header::before{
 
 .d2 {
     font-family: 'tex_gyre_adventorbold', sans-serif;
-    color: white;
-    background-color: rgb(47, 102, 112);
+    color: #263f44;
+    background-color: #fadd99;
     width: 80%;
     justify-self: center;
-    border-radius: 1em;
+    border-radius: 0.4em;
     padding: .5em;
     border: 0;
     user-select: none;
@@ -188,6 +190,7 @@ header::before{
 
 .d2:hover {
     transform: scale(1.03);
+    box-shadow: 3px 3px 4px #747474;
 }
 
 .d2:focus {
@@ -202,9 +205,9 @@ header::before{
   align-items: flex-end;
   margin-top: 12px;
   height: 42.4em;  
-  background-color: rgb(29, 172, 172);
+  background-color: #015668;
   padding-top: 1em;
-  border-radius: 1em;  
+  border-radius: 0.4em;  
   bottom: 0em;
 }
 
@@ -213,8 +216,8 @@ header::before{
   width: 8px;
   margin: 0px 2px;
   border-top-left-radius: 0.7em;
-  background-color: aquamarine;
-  box-shadow: 1px 1px rgb(162, 177, 172);
+  background-color: black;
+  box-shadow: 1px 1px rgb(78, 78, 78);
 }
 
 .dock{
@@ -224,7 +227,7 @@ header::before{
   width: 100%;
   height: 40px;
   border-radius: 1em;
-  background-color: rgb(29, 172, 172);
+  background-color: #015668;
  
 }
 
